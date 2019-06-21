@@ -3,9 +3,13 @@ This is a simple guide on how to install relevant software and branches in order
 
 ### Dependencies
 minimap2 version 2.14-r883 or higher.
+
 samtools 1.9 or higher.
+
 GNU parallel
+
 Nanopolish compiled with gcc version 5.4.0. 
+
 Scrappie compiled with cmake version 3.10.2
 
 ### Required files
@@ -79,7 +83,10 @@ ${NANOPOLISH_EXE} test-vcf-variants --genome ${REFERENCE} --reads reads.fasta --
 
 #Notes
 Last column of test.sniffles.variant.likelihoods.csv called "diff" has the likelihood difference as in L(ALT_SEQ) - L(REF_SEQ). 
+
 A negative likelihood difference for the given read means that the ref allele is more likely, whereas a positive difference means that the alt allele is more likely.
+
 If possible two likelihood values are given per read, one for the RIGHT and one for the LEFT flank, as the ref and alt alleles are tested from both flanks, with 500 bps as flank size on both sides.
+
 Currently, we are accepting SVs that breach a likelihood diff of +50, with at least 3 reads, using either (LEFT/RIGHT) flank.
 
