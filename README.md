@@ -1,6 +1,15 @@
 # Testing the squiggleSV branch on Nanopolish
 This is a simple guide on how to install relevant software and branches in order to use the squiggleSV branch on Nanopolish, in order to filter or accept structural variant (SV) candidates using the sequence-to-squiggle likelihood function provided by Nanopolish and event to basecall index map provided by a modified Scrappie branch. Two directories are provided. "test" and "results". We will use the raw fast5s and the candidate SV file in the folder "test" and aim to achieve the final result file test.sniffles.variant.likelihoods.csv.
 
+###Dependencies
+minimap2 version 2.14-r883 or higher.
+samtools 1.9 or higher.
+GNU parallel
+Nanopolish compiled with gcc version 5.4.0. 
+Scrappie compiled with cmake version 3.10.2
+
+### Required files
+Human reference genome hg38. (The candidate variant example provided is using hg38 coordinates.)
 
 ### Install nanopolish on branch squigglesv
 ```
@@ -31,7 +40,7 @@ After installing required software, you can start the sample run by entering the
 cd test
 ```
 
-### Create file reads.fast5.paths containing paths of the fast5 files that are going to be used, separated by newline.
+### Run the modified Scrappie to get the event to basecall index maps.
 Define executable locations. 
 This basecalls the reads using Scrappie, creating a reads.fasta using the fast5 files, alongside the .fast5.events (event tables, i.e. event index to basecall index maps) per fast5 file under the same directory fast5s reside.
 ```
@@ -49,7 +58,7 @@ ${NANOPOLISH_EXE} index -d fast5/ reads.fasta
 ```
 
 
-### Map the reads using on a human reference, e.g. hg38
+### Map the reads using on human reference genome hg38
 Generate the sorted bam files using minimap2 and samtools of the reads.fasta sequences.
 ```
 MINIMAP=#location of minimap2
