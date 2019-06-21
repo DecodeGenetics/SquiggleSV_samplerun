@@ -71,7 +71,7 @@ ${SAMTOOLS} index reads.sorted.bam
 ```
 
 
-### Run Nanopolish SV squiggle filtering using Scrappie basecalls "reads.fasta" and respective bam file, on an SV candidate in test.sniffles.variant.vcf
+### Run Nanopolish SV squiggle filtering using Scrappie basecalls, and respective bam file, on an SV candidate.
 Currently using flank size of 500 bps.
 We did not performs tests with more than 1 threads, using GNU parallel on smaller sizes input vcf files, when needed. 
 Currently using the entire chromosome as window, with variants from the window chromosome on the input vcf file.
