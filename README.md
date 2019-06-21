@@ -1,7 +1,7 @@
 # Testing the squiggleSV branch on Nanopolish
 This is a simple guide on how to install relevant software and branches in order to use the squiggleSV branch on Nanopolish, in order to filter or accept structural variant (SV) candidates using the sequence-to-squiggle likelihood function provided by Nanopolish and event to basecall index map provided by a modified Scrappie branch. Two directories are provided. "test" and "results". We will use the raw fast5s and the candidate SV file in the folder "test" and aim to achieve the final result file test.sniffles.variant.likelihoods.csv.
 
-###Dependencies
+### Dependencies
 minimap2 version 2.14-r883 or higher.
 samtools 1.9 or higher.
 GNU parallel
