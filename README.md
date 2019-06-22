@@ -73,7 +73,7 @@ ${SAMTOOLS} index reads.sorted.bam
 
 ### Run Nanopolish SV squiggle filtering using Scrappie basecalls, and respective bam file, on an SV candidate.
 Currently using flank size of 500 bps.
-We did not performs tests with more than 1 threads, and are using GNU parallel on smaller sizes input vcf files, when needed. 
+We did not performs tests with more than 1 threads, and are using GNU parallel on smaller sized input vcf files, when needed. 
 Currently using the entire chromosome as window, with variants from the window chromosome on the input vcf file.
 ```
 ${NANOPOLISH_EXE} test-vcf-variants --genome ${REFERENCE} --reads reads.fasta --bam reads.sorted.bam --ploidy 2 -t 1 -f 500 -w chr1 --candidates test.sniffles.variant.vcf -o test.sniffles.variant.likelihoods.csv
