@@ -83,5 +83,5 @@ ${NANOPOLISH_EXE} test-vcf-variants --genome ${REFERENCE} --reads reads.fasta --
 - Last column of test.sniffles.variant.likelihoods.csv called "diff" has the likelihood difference as in L(ALT_SEQ) - L(REF_SEQ). 
 - A negative likelihood difference for the given read means that the ref allele is more likely, whereas a positive difference means that the alt allele is more likely.
 - If possible two likelihood values are given per read, one for the RIGHT and one for the LEFT flank, as the ref and alt alleles are tested from both flanks, with 500 bps as flank size on both sides.
-- Currently, we are accepting SVs that breach a likelihood diff of +50, with at least 3 reads, using either (LEFT/RIGHT) flank.
+- Currently, we are accepting SVs that breach a log likelihood score diff of +1.92, with at least 3 reads, using either (LEFT/RIGHT) flank.
 
